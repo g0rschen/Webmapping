@@ -3,66 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gentrifizierungsdynamiken in Berlin</title>
+  <title>Gentrification Dynamics in Berlin</title>
+
+  <!-- Aileron Font via CDN -->
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/aileron">
+
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Aileron', sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
-      color: #222;
+      background-image: url('Blue Red Minimalist Corporate Business Social Media Management Plan Presentation.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: white;
     }
+
     .section {
-      padding: 60px 20px;
+      padding: 20px 20px;
       text-align: center;
     }
-    iframe {
+
+    .section.textblock {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 16px;
+      color: white;
+    }
+
+    .section.textblock p {
+      margin-bottom: 20px;
+    }
+
+    .section.textblock ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .section.textblock li {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 600;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    .iframe-large {
       width: 90%;
       height: 700px;
       border: none;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
+      overflow: hidden;
+      display: block;
     }
-    h1, h2 {
-      margin-bottom: 20px;
+
+    .iframe-small-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 0 auto 60px;
     }
-    p {
-      max-width: 700px;
-      margin: 0 auto 30px;
+
+    .iframe-small {
+      width: 45%;
+      height: 400px;
+      border: none;
+      overflow: hidden;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <!-- Einleitung -->
-  <div class="section" style="background-color: #f9f9f9;">
-    <h1>Gentrifizierungs-Dynamiken in Berlin (2009–2020)</h1>
-    <p>In dieser webbasierten Visualisierung zeigen wir anhand selbst erstellter Indizes, wie sich Gentrifizierung in Berlin zwischen 2009 und 2020 in verschiedenen Planungsräumen entwickelt hat.</p>
-    <p>Scrolle nach unten, um die Karten für verschiedene Jahre zu sehen.</p>
+  <!-- Introduction -->
+  <div class="section textblock">
+    <h1>Gentrification Dynamics in Berlin</h1>
+    <p>Gentrification has been a much-discussed term in political discourse in major German cities for years. The term describes the process of urban upgrading of neighborhoods with an accompanying displacement of the resident population by groups of people with higher incomes. Surprisingly, there are hardly any data-based studies on the systematic analysis of the spatial patterns of gentrification processes, despite the great attention in politics, media and culture regarding the topic. The last such study for Berlin was conducted by Holm & Schulz (2016), in which the authors created an index to measure gentrification at district level, taking into account real estate development and social dynamics. The data analyzed dates from 2007 to 2014. Our work aims to build on this research, developing it methodologically and using more up-to-date data.</p>
+
+    <p><strong><em>In which Berlin districts/areas (LOR Prognoseräume) can the most significant gentrification dynamics be identified based on data from 2009 to 2020?</em></strong></p>
+
+    <p>Building on the Gentriindex by Holm & Schulz, an analysis of spatial patterns of gentrification was carried out at the level of the LOR forecast areas on the basis of data from the Berlin Housing Atlas using a self-created index. Like the Gentriindex, our index uses proxy indicators to measure gentrification dynamics. In our model, the decline in the proportion of unemployed people within a study area, for example, does not stand for positive economic development in the neighborhood, but is an expression of displacement. Our index comprises the following 5 indicators, for each of which we have created our own sub-indices:</p>
+
+    <ul>
+      <li>Sub-index 1: Development of asking rents between the years 2009 - 2020 (35% weighting)</li>
+      <li>Sub-index 2: Development of the proportion of SGB II dependents between 2009 and 2020 (35% weighting)</li>
+      <li>Sub-index 3: Apartment sales between the years 2012 - 2017 & 2015 - 2020 (10% weighting)</li>
+      <li>Sub-index 4: Conversions of rental apartments between the years 2012 - 2017 & 2015 - 2020</li>
+      <li>Sub-index 5: Proportion of residents with at least 5 years of residence in 2020 (10% weighting)</li>
+    </ul>
+
+    <p>The results of this analysis on our first research question can be examined in the following maps and the respective value and rank for your own place of residence can be displayed.</p>
   </div>
 
-  <!-- Karte 1 -->
+  <!-- Finaler Gentrifizierungsindex -->
   <div class="section">
-    <h2>Karte 1: Index 2009</h2>
-    <iframe src="SUB-Index 1/index.html"></iframe>
+    <h2>Final Gentrificationindex</h2>
+    <iframe class="iframe-large" src="final-index/index.html" scrolling="no"></iframe>
   </div>
 
-  <!-- Karte 2 -->
+  <!-- Sub-Index Karten -->
   <div class="section">
-    <h2>Karte 2: Index 2015</h2>
-    <iframe src="Index 2/index.html"></iframe>
+    <h2>Sub-Indizes</h2>
+    <div class="iframe-small-container">
+      <iframe class="iframe-small" src="subindex-1/index.html" scrolling="no"></iframe>
+      <iframe class="iframe-small" src="subindex-2/index.html" scrolling="no"></iframe>
+      <iframe class="iframe-small" src="subindex-3/index.html" scrolling="no"></iframe>
+      <iframe class="iframe-small" src="subindex-4/index.html" scrolling="no"></iframe>
+      <iframe class="iframe-small" src="subindex-5/index.html" scrolling="no"></iframe>
+    </div>
   </div>
 
-  <!-- Karte 3 -->
+  <!-- Textblock: Forschungsfrage 1 -->
+  <div class="section textblock">
+    <h2>Forschungsfrage 1: Erklärung und Hinleitung</h2>
+    <p>Hier kommt euer erklärender Text zur ersten Forschungsfrage rein. Ihr könnt hier inhaltlich ausführen, was ihr anhand der bisherigen Karten zeigen wolltet und die Brücke zur nächsten Kartenrunde schlagen.</p>
+  </div>
+
+  <!-- Karten zur Entwicklung in Moabit -->
   <div class="section">
-    <h2>Karte 3: Index 2020</h2>
-    <iframe src="karte3/index.html"></iframe>
+    <h2>Entwicklung sozialer Indikatoren in Moabit</h2>
+    <iframe class="iframe-large" src="arbeitslosigkeit-moabit/index.html" scrolling="no"></iframe>
+    <iframe class="iframe-large" src="transferbezug-moabit/index.html" scrolling="no"></iframe>
+    <iframe class="iframe-large" src="kinderarmut-moabit/index.html" scrolling="no"></iframe>
   </div>
 
-  <!-- Fazit -->
-  <div class="section" style="background-color: #f9f9f9;">
-    <h2>Fazit</h2>
-    <p>Die interaktiven Karten zeigen deutlich, wie unterschiedlich sich Gentrifizierungsprozesse räumlich entwickeln. Diese Darstellung kann eine Grundlage für die weitere Diskussion in der Stadtplanung und Stadtforschung sein.</p>
-    <p>Erstellt im Rahmen des GIS-Projekts an der TU Berlin.</p>
+  <!-- Abschließender Text -->
+  <div class="section textblock">
+    <h2>Forschungsfrage 2 und Ausblick</h2>
+    <p>Hier könnt ihr eure zweite Forschungsfrage einführen oder ein Fazit bzw. Ausblick geben. Z. B. politische Relevanz, methodische Überlegungen oder offene Fragen.</p>
   </div>
 
 </body>
