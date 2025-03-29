@@ -14,13 +14,35 @@
         <style>
         #map {
             width: 916px;
-            height: 759px;
+            height: 663px;
         }
         </style>
         <title></title>
     </head>
     <body>
         <div id="map">
+          <div id="infobox">
+           <strong>Development of child poverty (2013-2019)</strong><br>
+The eastern and southern LOR planning areas also stand out for this indicator. The Berlin-wide decline in the proportion of transfer recipients under the age of 15 of -8.3% on average is far exceeded here.
+         </div>
+         <style>
+           #infobox {
+             position: absolute;
+             bottom: 20px;
+             left: 20px;
+             background-color: rgba(255, 255, 255, 0.85);
+             color: black;
+             padding: 12px 18px;
+             font-size: 14px;
+             max-width: 300px;
+             z-index: 1000;
+             border-radius: 8px;
+             line-height: 1.4;
+             font-family: sans-serif;
+             pointer-events: none;
+           }
+         </style>
+       </div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -252,7 +274,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(195,29,29,1.0)',
@@ -267,7 +289,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(206,71,71,1.0)',
@@ -282,7 +304,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(217,114,114,1.0)',
@@ -297,7 +319,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(229,156,156,1.0)',
@@ -312,7 +334,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(240,199,199,1.0)',
@@ -327,7 +349,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(251,241,241,1.0)',
@@ -379,7 +401,7 @@
                 dashArray: '35.0,7.0',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 7.0, 
+                weight: 7.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(213,180,60,0.0)',

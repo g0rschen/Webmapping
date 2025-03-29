@@ -34,6 +34,29 @@
     </head>
     <body>
         <div id="map">
+            <div id="infobox">
+             <strong>Conversions of rental appartements /
+             Sub-Index 4</strong><br>
+             The proportion of conversions into owner-occupied appartements shows a spatially similar pattern to sub-index 3. Here too, the Friedrichshain-Ost Prognoseraum has the highest index value.
+           </div>
+           <style>
+             #infobox {
+               position: absolute;
+               bottom: 20px;
+               left: 20px;
+               background-color: rgba(255, 255, 255, 0.85);
+               color: black;
+               padding: 12px 18px;
+               font-size: 11px;
+               max-width: 150px;
+               z-index: 1000;
+               border-radius: 8px;
+               line-height: 1.4;
+               font-family: sans-serif;
+               pointer-events: none;
+             }
+           </style>
+         </div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
