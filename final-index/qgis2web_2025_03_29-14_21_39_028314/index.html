@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
         #map {
-            width: 1324px;
-            height: 730px;
+            width: 916px;
+            height: 663px;
         }
         </style>
         <title></title>
@@ -34,12 +34,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/FLLLAYER_HINTERGRUNDKEINEDATEN_1.js"></script>
         <script src="data/final_gentrification_index_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[52.2888036566716,12.90528463387352],[52.71241597785547,14.134426222391571]]);
+        }).fitBounds([[52.321006908451835,13.010480216659568],[52.68781746237174,13.830074387256808]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -164,15 +163,18 @@
         map.createPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1');
         map.getPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1').style.zIndex = 401;
         map.getPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1').style['mix-blend-mode'] = 'normal';
-        var layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1 = new L.geoJson.multiStyle(json_FLLLAYER_HINTERGRUNDKEINEDATEN_1, {
+        var layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1 = L.geoJson.multiStyle(null, {
             attribution: '',
             interactive: false,
             dataVar: 'json_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
             layerName: 'layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+            styles: [style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0,style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_1,],
             pane: 'pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
-            onEachFeature: pop_FLLLAYER_HINTERGRUNDKEINEDATEN_1,
-            styles: [style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0,style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_1,]
+            onEachFeature: pop_FLLLAYER_HINTERGRUNDKEINEDATEN_1
         });
+        function getFLLLAYER_HINTERGRUNDKEINEDATEN_1Json(geojson) {
+            layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1.addData(geojson);
+        };
         bounds_group.addLayer(layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1);
         map.addLayer(layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1);
         function pop_final_gentrification_index_2(feature, layer) {
@@ -210,7 +212,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(60,106,169,1.0)',
@@ -225,7 +227,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(113,145,188,1.0)',
@@ -240,7 +242,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(166,183,207,1.0)',
@@ -255,7 +257,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(218,222,226,1.0)',
@@ -270,7 +272,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(237,211,206,1.0)',
@@ -285,7 +287,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(223,150,147,1.0)',
@@ -300,7 +302,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(209,90,88,1.0)',
@@ -315,7 +317,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(195,29,29,1.0)',
@@ -348,7 +350,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-        {label: '<b>FORSCHUNGSFRAGE_2</b>', selectAllCheckbox: true, children: [
+        {label: '<b>GESAMTINDEX_GENTRIFICATION</b>', selectAllCheckbox: true, children: [
             {label: 'final_gentrification_index<br /><table><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_01020.png" /></td><td>0,1 - 0,2</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_02031.png" /></td><td>0,2 - 0,3</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_03042.png" /></td><td>0,3 - 0,4</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_04053.png" /></td><td>0,4 - 0,5</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_05064.png" /></td><td>0,5 - 0,6</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_06075.png" /></td><td>0,6 - 0,7</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_07086.png" /></td><td>0,7 - 0,8</td></tr><tr><td style="text-align: center;"><img src="legend/final_gentrification_index_2_08097.png" /></td><td>0,8 - 0,9</td></tr></table>', layer: layer_final_gentrification_index_2},]},
             {label: '<img src="legend/FLLLAYER_HINTERGRUNDKEINEDATEN_1.png" /> FÜLLLAYER_HINTERGRUND (KEINE DATEN)', layer: layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1},
             {label: "OpenStreetMap", layer: layer_OpenStreetMap_0},]
@@ -362,29 +364,7 @@
             collapsed: true,
         });
         lay.addTo(map);
-        setBounds();
         </script>
-        ...
-    </script>
-    <div id="infobox">
-      <p>Hier steht dein Text drin. Du kannst diesen später einfach ändern.</p>
-    </div>
-
-    <style>
-    #infobox {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 12px 18px;
-      font-size: 14px;
-      max-width: 300px;
-      z-index: 9999;
-      border-radius: 8px;
-      line-height: 1.4;
-      font-family: sans-serif;
-    }
-    </style>
-  </body>
+        <script src='https://gdi.berlin.de/services/wfs/wa_01_angebotsmieten?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=wa_01_angebotsmieten:wa_01_2009&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3AgetFLLLAYER_HINTERGRUNDKEINEDATEN_1Json'></script>
+    </body>
 </html>
