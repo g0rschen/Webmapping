@@ -9,20 +9,27 @@
   <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/aileron">
 
   <style>
-    body {
-      font-family: 'Aileron', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('Blue Red Minimalist Corporate Business Social Media Management Plan Presentation.png');
-      @media (max-width: 768px) {
-    body {
-      background-attachment: scroll;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-      color: white;
-    }
+  body {
+font-family: 'Aileron', sans-serif;
+margin: 0;
+padding: 0;
+background-image: url('Blue Red Minimalist Corporate Business Social Media Management Plan Presentation.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+color: white;
+}
+
+@media (max-width: 768px) {
+body {
+  background-attachment: scroll;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+}
+
 
     .section {
       padding-top: 20px;
@@ -79,8 +86,9 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 5px;
-      margin-bottom: 0px;
+      column-gap: 5px;
+      row-gap: 0px;
+      margin-bottom: 0;
     }
 
 .iframe-small {
