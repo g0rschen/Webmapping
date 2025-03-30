@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -57,56 +58,53 @@
     h2 {
       font-size: 30px;
       font-weight: 600;
-      margin-top: 30px;
+      margin-top: 60px;
       margin-bottom: 20px;
     }
 
     .iframe-large {
-      width: 60%;
+      width: 90%;
       height: 700px;
       border: none;
       display: block;
-      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
     }
 
     .iframe-small-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-  margin-bottom: 10px;
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-.iframe-small {
-  flex: 0 1 45%;
-  height: 700px;
-  border: none;
-  display: block;
-}
+    .iframe-small {
+      width: 100%;
+      height: 500px;
+      border: none;
+      transform: scale(0.85);
+      transform-origin: top left;
+      margin: -30px -40px;
+      display: block;
+    }
 
-.image-after-list {
-  text-align: center;
-  margin-top: 20px;
-}
+    .image-after-list {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-.image-after-list img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
+    .image-after-list img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
 
-#zooming-text {
-  margin-top: 30px;
-}
-
-.iframe-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
+    #zooming-text {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -114,11 +112,11 @@
   <!-- Introduction -->
   <div class="section textblock">
     <h1>Gentrification Dynamics in Berlin</h1>
-    <p>Gentrification has been a much-discussed term in political discourse in major German cities for years. The term describes the process of urban upgrading of neighborhoods with an accompanying displacement of the resident population by groups of people with higher incomes. Surprisingly, there are hardly any data-based studies on the systematic analysis of the spatial patterns of gentrification processes, despite the great attention in politics, media and culture regarding the topic. The last such study for Berlin was conducted by Holm & Schulz (2016), in which the authors created an index to measure gentrification at district level, taking into account real estate development and social dynamics. The data analyzed dates from 2007 to 2014. Our work aims to build on this research, developing it methodologically and using more up-to-date data.</p>
+    <p>Gentrification has been a much-discussed term in political discourse in major German cities for years. The term describes the process of urban upgrading of neighborhoods with an accompanying displacement of the resident population by groups of people with higher incomes...</p>
 
-    <p><strong><em>In which Berlin districts (LOR Prognoseräume) can the most significant gentrification dynamics be identified based on data from 2009 to 2020?</em></strong></p>
+    <p><strong><em>In which Berlin districts/areas (LOR Prognoseräume) can the most significant gentrification dynamics be identified based on data from 2009 to 2020?</em></strong></p>
 
-    <p>Building on the Gentriindex by Holm & Schulz, an analysis of spatial patterns of gentrification was carried out at the level of the LOR forecast areas on the basis of data from the Berlin Housing Atlas using a self-created index. Like the Gentriindex, our index uses proxy indicators to measure gentrification dynamics. In our model, the decline in the proportion of unemployed people within a study area, for example, does not stand for positive economic development in the neighborhood, but is an expression of displacement. Our index comprises the following 5 indicators, for each of which we have created our own sub-indices:</p>
+    <p>Building on the Gentriindex by Holm & Schulz, an analysis...</p>
 
     <ul>
       <li>Sub-index 1: Development of asking rents between the years 2009 - 2020 (35% weighting)</li>
@@ -129,34 +127,42 @@
     </ul>
 
     <div class="image-after-list">
-      <img src="img/example-subindex.svg" alt="methodical approach">
+      <img src="img/example-subindex.png" alt="Subindex Diagramm oder Beispielbild">
     </div>
 
-    <p>The results of this analysis on our first research question can be examined in the following maps and the respective value and rank for your own place of residence can be displayed.</p>
+    <p>The results of this analysis on our first research question can be examined in the following maps...</p>
   </div>
 
   <!-- Finaler Gentrifizierungsindex -->
   <div class="section">
     <h2>Final Gentrificationindex</h2>
-    <div class="iframe-wrapper">
     <iframe class="iframe-large" src="final-index/index.html" scrolling="no"></iframe>
-    </div>
   </div>
 
-  <!-- Sub-indices Karten -->
+  <!-- Sub-Index Karten -->
   <div class="section">
-    <h2>Sub indices</h2>
+    <h2>Sub-indices</h2>
     <div class="iframe-small-container">
-      <iframe class="iframe-small" src="subindex-1/index.html" scrolling="no"></iframe>
-      <iframe class="iframe-small" src="subindex-2/index.html" scrolling="no"></iframe>
-      <iframe class="iframe-small" src="subindex-3/index.html" scrolling="no"></iframe>
-      <iframe class="iframe-small" src="subindex-4/index.html" scrolling="no"></iframe>
-      <iframe class="iframe-small" src="subindex-5/index.html" scrolling="no"></iframe>
+      <div style="width: 45%; overflow: hidden;">
+        <iframe class="iframe-small" src="subindex-1/index.html" scrolling="no"></iframe>
+      </div>
+      <div style="width: 45%; overflow: hidden;">
+        <iframe class="iframe-small" src="subindex-2/index.html" scrolling="no"></iframe>
+      </div>
+      <div style="width: 45%; overflow: hidden;">
+        <iframe class="iframe-small" src="subindex-3/index.html" scrolling="no"></iframe>
+      </div>
+      <div style="width: 45%; overflow: hidden;">
+        <iframe class="iframe-small" src="subindex-4/index.html" scrolling="no"></iframe>
+      </div>
+      <div style="width: 45%; overflow: hidden;">
+        <iframe class="iframe-small" src="subindex-5/index.html" scrolling="no"></iframe>
+      </div>
     </div>
   </div>
 
   <!-- Textblock: Forschungsfrage 1 -->
-  <div class="section textblock">
+  <div class="section textblock" id="zooming-text">
     <h2>Zooming in on the smaller scale</h2>
     <p>In view of the fact that gentrification processes manifest themselves at the small-scale neighborhood level, it is not sufficient to look at the rough spatial distribution of gentrification dynamics across the city. For this reason, we took a closer look at the Prognoseraum with the highest value in the final index, Moabit. As there is no reliable open geodata on rental price trends at the small-scale level, we had to concentrate on analyzing data on social displacement. This led to the following question:</p>
 
@@ -168,20 +174,14 @@
   <!-- Karten zur Entwicklung in Moabit -->
   <div class="section">
     <h2>Social Dynamics in Moabit</h2>
-    <div class="iframe-wrapper">
     <iframe class="iframe-large" src="arbeitslosigkeit-moabit/index.html" scrolling="no"></iframe>
-    </div>
-      <div class="iframe-wrapper">
     <iframe class="iframe-large" src="transferbezug-moabit/index.html" scrolling="no"></iframe>
-    </div>
-    <div class="iframe-wrapper">
     <iframe class="iframe-large" src="kinderarmut-moabit/index.html" scrolling="no"></iframe>
-    </div>
   </div>
 
   <!-- Abschließender Text -->
   <div class="section textblock">
-    <h2>Whats next?</h2>
+    <<h2>Whats next?</h2>
     <p>This analysis of gentrification dynamics closes a research gap by further developing an existing index model for measuring gentrification and using more up-to-date data. It allows only limited conclusions to be drawn about the causes of gentrification, but provides a solid basis for identifying spatial patterns and justifying planning interventions at the neighborhood level.
 
     For the Moabit-Prognoseraum, for example, clearer social displacement dynamics can be seen for the eastern and southern Planungsräume. These small-scale differences can, among other things, provide information about the effects of individual construction projects such as Europacity, which was implemented in the Heidestrasse planning area during the study period.
