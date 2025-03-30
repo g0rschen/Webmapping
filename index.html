@@ -22,7 +22,10 @@
     }
 
     .section {
-      padding: 20px;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
       text-align: center;
     }
 
@@ -57,8 +60,8 @@
     h2 {
       font-size: 30px;
       font-weight: 600;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     .iframe-large {
@@ -106,6 +109,18 @@
   width: 100%;
 }
 
+.tight-bottom {
+  padding: 20px 20px 0 20px !important;
+  margin-bottom: 0 !important;
+}
+
+.no-top-margin {
+  margin-top: 0 !important;
+}
+
+.tight-bottom + .textblock {
+  padding-top: 0 !important;
+}
 
   </style>
 </head>
@@ -144,7 +159,7 @@
   </div>
 
   <!-- Sub-indices Karten -->
-  <div class="section">
+  <div class="section tight-bottom">
     <h2>Sub indices</h2>
     <div class="iframe-small-container">
       <iframe class="iframe-small" src="subindex-1/index.html" scrolling="no"></iframe>
@@ -156,7 +171,7 @@
   </div>
 
   <!-- Textblock: Forschungsfrage 1 -->
-  <div class="section textblock">
+  <div class="section textblock" style="padding-top: 0;">
     <h2>Zooming in on the smaller scale</h2>
     <p>In view of the fact that gentrification processes manifest themselves at the small-scale neighborhood level, it is not sufficient to look at the rough spatial distribution of gentrification dynamics across the city. For this reason, we took a closer look at the Prognoseraum with the highest value in the final index, Moabit. As there is no reliable open geodata on rental price trends at the small-scale level, we had to concentrate on analyzing data on social displacement. This led to the following question:</p>
 
