@@ -61,6 +61,7 @@
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -69,11 +70,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/subindex_2_1.js"></script>
+        <script src="data/subindex_1_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[52.35010389625164,12.970522885932356],[52.71642562343297,13.720286186796596]]);
+        }).fitBounds([[52.321006908451835,13.010480216659568],[52.68781746237174,13.830074387256808]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -124,7 +125,95 @@
         });
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
-        function pop_subindex_2_1(feature, layer) {
+        function pop_FLLLAYER_HINTERGRUNDKEINEDATEN_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bezirk'] !== null ? autolinker.link(String(feature.properties['bezirk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prognoseraum_bezeichnung'] !== null ? autolinker.link(String(feature.properties['prognoseraum_bezeichnung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prognoseraum_nummer'] !== null ? autolinker.link(String(feature.properties['prognoseraum_nummer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['angebotsmieten'] !== null ? autolinker.link(String(feature.properties['angebotsmieten']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Jahrgang: 2020 (Angebotsmieten)_angebotsmieten'] !== null ? autolinker.link(String(feature.properties['Jahrgang: 2020 (Angebotsmieten)_angebotsmieten']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SGB II Anteil: Veränderung 2009-2020_Index_Min-Max-Skalierung'] !== null ? autolinker.link(String(feature.properties['SGB II Anteil: Veränderung 2009-2020_Index_Min-Max-Skalierung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['2009-2020 (Prozentuale Veraenderung)'] !== null ? autolinker.link(String(feature.properties['2009-2020 (Prozentuale Veraenderung)']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Z_Mietpreisentwicklung'] !== null ? autolinker.link(String(feature.properties['Z_Mietpreisentwicklung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Index_Min-Max-Skalierung'] !== null ? autolinker.link(String(feature.properties['Index_Min-Max-Skalierung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Index_Mieten+SGBII_2009-2020'] !== null ? autolinker.link(String(feature.properties['Index_Mieten+SGBII_2009-2020']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        var pattern_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#000000',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0.addTo(map);
+        function style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0() {
+            return {
+                pane: 'pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0,
+                interactive: false,
+            }
+        }
+        function style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_1() {
+            return {
+                pane: 'pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1');
+        map.getPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1').style.zIndex = 401;
+        map.getPane('pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1').style['mix-blend-mode'] = 'normal';
+        var layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1 = L.geoJson.multiStyle(null, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+            layerName: 'layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+            styles: [style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_0,style_FLLLAYER_HINTERGRUNDKEINEDATEN_1_1,],
+            pane: 'pane_FLLLAYER_HINTERGRUNDKEINEDATEN_1',
+            onEachFeature: pop_FLLLAYER_HINTERGRUNDKEINEDATEN_1
+        });
+        function getFLLLAYER_HINTERGRUNDKEINEDATEN_1Json(geojson) {
+            layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1.addData(geojson);
+        };
+        bounds_group.addLayer(layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1);
+        map.addLayer(layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1);
+        function pop_subindex_1_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">district</th>\
@@ -140,11 +229,11 @@
                     </tr>\
                     <tr>\
                         <th scope="row">indexvalue</th>\
-                        <td>' + (feature.properties['subindex_2'] !== null ? autolinker.link(String(feature.properties['subindex_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['subindex_1'] !== null ? autolinker.link(String(feature.properties['subindex_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">rank</th>\
-                        <td>' + (feature.properties['rank_subindex_2'] !== null ? autolinker.link(String(feature.properties['rank_subindex_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['rank_subindex_1'] !== null ? autolinker.link(String(feature.properties['rank_subindex_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -154,10 +243,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_subindex_2_1_0(feature) {
-            if (feature.properties['subindex_2'] >= 0.000000 && feature.properties['subindex_2'] <= 0.100000 ) {
+        function style_subindex_1_2_0(feature) {
+            if (feature.properties['subindex_1'] >= 0.000000 && feature.properties['subindex_1'] <= 0.100000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -170,9 +259,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.100000 && feature.properties['subindex_2'] <= 0.200000 ) {
+            if (feature.properties['subindex_1'] >= 0.100000 && feature.properties['subindex_1'] <= 0.200000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -185,9 +274,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.200000 && feature.properties['subindex_2'] <= 0.300000 ) {
+            if (feature.properties['subindex_1'] >= 0.200000 && feature.properties['subindex_1'] <= 0.300000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -200,9 +289,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.300000 && feature.properties['subindex_2'] <= 0.400000 ) {
+            if (feature.properties['subindex_1'] >= 0.300000 && feature.properties['subindex_1'] <= 0.400000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -215,9 +304,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.400000 && feature.properties['subindex_2'] <= 0.500000 ) {
+            if (feature.properties['subindex_1'] >= 0.400000 && feature.properties['subindex_1'] <= 0.500000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -230,9 +319,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.500000 && feature.properties['subindex_2'] <= 0.600000 ) {
+            if (feature.properties['subindex_1'] >= 0.500000 && feature.properties['subindex_1'] <= 0.600000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -245,9 +334,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.600000 && feature.properties['subindex_2'] <= 0.700000 ) {
+            if (feature.properties['subindex_1'] >= 0.600000 && feature.properties['subindex_1'] <= 0.700000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -260,9 +349,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.700000 && feature.properties['subindex_2'] <= 0.800000 ) {
+            if (feature.properties['subindex_1'] >= 0.700000 && feature.properties['subindex_1'] <= 0.800000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -275,9 +364,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.800000 && feature.properties['subindex_2'] <= 0.900000 ) {
+            if (feature.properties['subindex_1'] >= 0.800000 && feature.properties['subindex_1'] <= 0.900000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -290,9 +379,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['subindex_2'] >= 0.900000 && feature.properties['subindex_2'] <= 1.000000 ) {
+            if (feature.properties['subindex_1'] >= 0.900000 && feature.properties['subindex_1'] <= 1.000000 ) {
                 return {
-                pane: 'pane_subindex_2_1',
+                pane: 'pane_subindex_1_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -306,66 +395,20 @@
             }
             }
         }
-        map.createPane('pane_subindex_2_1');
-        map.getPane('pane_subindex_2_1').style.zIndex = 401;
-        map.getPane('pane_subindex_2_1').style['mix-blend-mode'] = 'normal';
-        var layer_subindex_2_1 = new L.geoJson(json_subindex_2_1, {
+        map.createPane('pane_subindex_1_2');
+        map.getPane('pane_subindex_1_2').style.zIndex = 402;
+        map.getPane('pane_subindex_1_2').style['mix-blend-mode'] = 'normal';
+        var layer_subindex_1_2 = new L.geoJson(json_subindex_1_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_subindex_2_1',
-            layerName: 'layer_subindex_2_1',
-            pane: 'pane_subindex_2_1',
-            onEachFeature: pop_subindex_2_1,
-            style: style_subindex_2_1_0,
+            dataVar: 'json_subindex_1_2',
+            layerName: 'layer_subindex_1_2',
+            pane: 'pane_subindex_1_2',
+            onEachFeature: pop_subindex_1_2,
+            style: style_subindex_1_2_0,
         });
-        bounds_group.addLayer(layer_subindex_2_1);
-        map.addLayer(layer_subindex_2_1);
-        function pop_SBahnRing_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['typ'] !== null ? autolinker.link(String(feature.properties['typ']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_SBahnRing_2_0() {
-            return {
-                pane: 'pane_SBahnRing_2',
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: 3.0,
-                fillOpacity: 0,
-                interactive: false,
-            }
-        }
-        map.createPane('pane_SBahnRing_2');
-        map.getPane('pane_SBahnRing_2').style.zIndex = 402;
-        map.getPane('pane_SBahnRing_2').style['mix-blend-mode'] = 'normal';
-        var layer_SBahnRing_2 = L.geoJson(null, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_SBahnRing_2',
-            layerName: 'layer_SBahnRing_2',
-            style: style_SBahnRing_2_0,
-            pane: 'pane_SBahnRing_2',
-            onEachFeature: pop_SBahnRing_2
-        });
-        function getSBahnRing_2Json(geojson) {
-            layer_SBahnRing_2.addData(geojson);
-        };
-        bounds_group.addLayer(layer_SBahnRing_2);
-        map.addLayer(layer_SBahnRing_2);
+        bounds_group.addLayer(layer_subindex_1_2);
+        map.addLayer(layer_subindex_1_2);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -377,9 +420,9 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: '<img src="legend/SBahnRing_2.png" /> S-Bahn-Ring', layer: layer_SBahnRing_2},
-        {label: '<b>Wohnatlas - SGB II Daten</b>', selectAllCheckbox: true, children: [
-            {label: 'subindex_2<br /><table><tr><td style="text-align: center;"><img src="legend/subindex_2_1_0010.png" /></td><td>0 - 0,1</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_01021.png" /></td><td>0,1 - 0,2</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_02032.png" /></td><td>0,2 - 0,3</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_03043.png" /></td><td>0,3 - 0,4</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_04054.png" /></td><td>0,4 - 0,5</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_05065.png" /></td><td>0,5 - 0,6</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_06076.png" /></td><td>0,6 - 0,7</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_07087.png" /></td><td>0,7 - 0,8</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_08098.png" /></td><td>0,8 - 0,9</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_2_1_0919.png" /></td><td>0,9 - 1</td></tr></table>', layer: layer_subindex_2_1},]},
+        {label: '<b>Wohnatlas - Angebotsmieten</b>', selectAllCheckbox: true, children: [
+            {label: 'subindex_1<br /><table><tr><td style="text-align: center;"><img src="legend/subindex_1_2_0010.png" /></td><td>0 - 0,1</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_01021.png" /></td><td>0,1 - 0,2</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_02032.png" /></td><td>0,2 - 0,3</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_03043.png" /></td><td>0,3 - 0,4</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_04054.png" /></td><td>0,4 - 0,5</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_05065.png" /></td><td>0,5 - 0,6</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_06076.png" /></td><td>0,6 - 0,7</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_07087.png" /></td><td>0,7 - 0,8</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_08098.png" /></td><td>0,8 - 0,9</td></tr><tr><td style="text-align: center;"><img src="legend/subindex_1_2_0919.png" /></td><td>0,9 - 1</td></tr></table>', layer: layer_subindex_1_2},]},
+            {label: '<img src="legend/FLLLAYER_HINTERGRUNDKEINEDATEN_1.png" /> FÜLLLAYER_HINTERGRUND (KEINE DATEN)', layer: layer_FLLLAYER_HINTERGRUNDKEINEDATEN_1},
             {label: "OpenStreetMap", layer: layer_OpenStreetMap_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -392,6 +435,6 @@
         });
         lay.addTo(map);
         </script>
-        <script src='https://gdi.berlin.de/services/wfs/wa_01_angebotsmieten?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=wa_01_angebotsmieten:wa_sbahnring&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3AgetSBahnRing_2Json'></script>
+        <script src='https://gdi.berlin.de/services/wfs/wa_01_angebotsmieten?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=wa_01_angebotsmieten:wa_01_2009&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3AgetFLLLAYER_HINTERGRUNDKEINEDATEN_1Json'></script>
     </body>
 </html>
